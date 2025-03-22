@@ -3,8 +3,9 @@ import os
 
 NOTION_API_URL = "https://api.notion.com/v1/pages"
 NOTION_VERSION = "2022-06-28"
-NOTION_TOKEN = "secret_512566589708icplHcKlE2BmA6vtEUAHxV6HLhPSHI62si"
-DATABASE_ID = "1bebef228c1a80809256cfc338d83e4d"
+NOTION_TOKEN = os.environ.get("NOTION_TOKEN")
+DATABASE_ID = os.environ.get("DATABASE_ID")
+
 
 headers = {
     "Authorization": f"Bearer {NOTION_TOKEN}",
