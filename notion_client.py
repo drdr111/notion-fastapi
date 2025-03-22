@@ -28,5 +28,6 @@ def create_notion_page(data):
     "status": {"select": {"name": data.status}}
 }
     }
-    response = httpx.post(NOTION_API_URL, headers=headers, json=payload)
+    response = httpx.post(NOTION_API_URL, headers=headers, json=payload, timeout=20.0)
+
     return response.status_code, response.json()
